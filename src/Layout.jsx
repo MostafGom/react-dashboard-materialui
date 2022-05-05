@@ -122,17 +122,6 @@ export default function MiniDrawer({ children }) {
                 })}
             >
                 <Toolbar>
-                    {/* <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        onClick={handleDrawerOpen}
-                        edge="start"
-                        className={clsx(classes.menuButton, {
-                            [classes.hide]: open,
-                        })}
-                    >
-                        <MenuIcon />
-                    </IconButton> */}
                     <Typography variant="h6" noWrap>
                         Cool Navigation
                     </Typography>
@@ -173,25 +162,25 @@ export default function MiniDrawer({ children }) {
                 </div>
                 <Divider />
                 <List>
-                    {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                        <Link to='/teams' key={text} className={classes.link}>
-                            <ListItem button >
-                                <ListItemIcon className={classes.iconBottom}>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                                <ListItemText primary={text} />
-                            </ListItem>
+                    <ListItem button >
+                        <Link to='/teams' className={classes.link}>
+                            <ListItemIcon className={classes.iconBottom}>
+                                <InboxIcon />
+                            </ListItemIcon>
+                            <ListItemText primary='Teams' />
                         </Link>
-                    ))}
+                    </ListItem>
                 </List>
                 <Divider />
                 <List>
-                    {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                        <Link to='/' key={text} className={classes.link}>
-                            <ListItem button>
-                                <ListItemIcon className={classes.icon} >{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                                <ListItemText primary={text} />
-                            </ListItem>
+                    <ListItem button >
+                        <Link to='/' className={classes.link}>
+                            <ListItemIcon className={classes.iconBottom}>
+                                <MailIcon />
+                            </ListItemIcon>
+                            <ListItemText primary='Home' />
                         </Link>
-                    ))}
+                    </ListItem>
                 </List>
             </Drawer>
             <main className={classes.content}>
