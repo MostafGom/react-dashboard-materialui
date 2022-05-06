@@ -15,10 +15,15 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
-import App from './App';
+import Home from '@material-ui/icons/Home';
+import GroupWorkIcon from '@material-ui/icons/GroupWork';
+import GroupIcon from '@material-ui/icons/Group';
+import AssignmentIcon from '@material-ui/icons/Assignment';
+import PlaylistAddCheckIcon from '@material-ui/icons/PlaylistAddCheck';
 import { Link } from 'react-router-dom';
+import { base } from './constant';
+
+
 
 const drawerWidth = 240;
 
@@ -163,9 +168,9 @@ export default function MiniDrawer({ children }) {
                 <Divider />
                 <List>
                     <ListItem button >
-                        <Link to='/teams' className={classes.link}>
+                        <Link to={`${base}teams`} className={classes.link}>
                             <ListItemIcon className={classes.iconBottom}>
-                                <InboxIcon />
+                                <GroupWorkIcon />
                             </ListItemIcon>
                             <ListItemText primary='Teams' />
                         </Link>
@@ -174,11 +179,35 @@ export default function MiniDrawer({ children }) {
                 <Divider />
                 <List>
                     <ListItem button >
-                        <Link to='/' className={classes.link}>
+                        <Link to={`${base}`} className={classes.link}>
                             <ListItemIcon className={classes.iconBottom}>
-                                <MailIcon />
+                                <Home />
                             </ListItemIcon>
                             <ListItemText primary='Home' />
+                        </Link>
+                    </ListItem>
+                    <ListItem button >
+                        <Link to={`${base}users`} className={classes.link}>
+                            <ListItemIcon className={classes.iconBottom}>
+                                <GroupIcon />
+                            </ListItemIcon>
+                            <ListItemText primary='Users' />
+                        </Link>
+                    </ListItem>
+                    <ListItem button >
+                        <Link to={`${base}taks`} className={classes.link}>
+                            <ListItemIcon className={classes.iconBottom}>
+                                <PlaylistAddCheckIcon />
+                            </ListItemIcon>
+                            <ListItemText primary='Tasks' />
+                        </Link>
+                    </ListItem>
+                    <ListItem button >
+                        <Link to={`${base}posts`} className={classes.link}>
+                            <ListItemIcon className={classes.iconBottom}>
+                                <AssignmentIcon />
+                            </ListItemIcon>
+                            <ListItemText primary='Posts' />
                         </Link>
                     </ListItem>
                 </List>
